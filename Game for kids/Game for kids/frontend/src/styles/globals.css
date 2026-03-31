@@ -1,0 +1,203 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Variables for fonts */
+:root {
+  --font-heading: 'Trebuchet MS', 'Arial Rounded MT Bold', 'Segoe UI', sans-serif;
+  --font-body: 'Nunito Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Base Styles */
+@layer base {
+  html {
+    font-family: var(--font-body);
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-gray-800 antialiased;
+    font-family: var(--font-body);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-bold;
+  }
+}
+
+/* Component Styles */
+@layer components {
+  /* Primary Button */
+  .btn-primary {
+    @apply bg-primary hover:bg-primary-light text-white font-bold py-4 px-8 rounded-2xl
+           shadow-button hover:shadow-button-hover transform hover:scale-105
+           transition-all duration-200 text-lg;
+  }
+
+  /* Secondary Button */
+  .btn-secondary {
+    @apply bg-secondary hover:bg-secondary-light text-white font-bold py-4 px-8 rounded-2xl
+           shadow-button hover:shadow-button-hover transform hover:scale-105
+           transition-all duration-200 text-lg;
+  }
+
+  /* Accent Button */
+  .btn-accent {
+    @apply bg-accent hover:bg-accent-light text-gray-800 font-bold py-4 px-8 rounded-2xl
+           shadow-button hover:shadow-button-hover transform hover:scale-105
+           transition-all duration-200 text-lg;
+  }
+
+  /* Game Card */
+  .game-card {
+    @apply bg-white rounded-3xl p-6 shadow-card hover:shadow-soft
+           transform hover:scale-105 transition-all duration-300
+           cursor-pointer border-4 border-transparent hover:border-secondary;
+  }
+
+  /* Answer Button */
+  .answer-btn {
+    @apply w-full bg-info hover:bg-info-light text-gray-800 font-bold py-4 px-6
+           rounded-2xl shadow-button hover:shadow-button-hover
+           transform hover:scale-102 transition-all duration-200
+           text-lg md:text-xl;
+  }
+
+  /* Answer Button Correct */
+  .answer-btn-correct {
+    @apply bg-success hover:bg-success text-white animate-bounce;
+  }
+
+  /* Answer Button Wrong */
+  .answer-btn-wrong {
+    @apply bg-primary hover:bg-primary text-white animate-shake;
+  }
+
+  /* Card Base */
+  .card {
+    @apply bg-white rounded-3xl p-6 shadow-soft;
+  }
+
+  /* Input Field */
+  .input-field {
+    @apply w-full px-6 py-4 rounded-2xl border-4 border-gray-200
+           focus:border-secondary focus:outline-none text-lg
+           transition-colors duration-200;
+  }
+
+  /* Progress Bar */
+  .progress-bar {
+    @apply h-4 bg-gray-200 rounded-full overflow-hidden;
+  }
+
+  .progress-bar-fill {
+    @apply h-full bg-gradient-to-r from-secondary to-primary transition-all duration-500;
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center px-4 py-2 rounded-full text-sm font-bold;
+  }
+
+  .badge-gold {
+    @apply bg-yellow-400 text-yellow-900;
+  }
+
+  .badge-silver {
+    @apply bg-gray-300 text-gray-800;
+  }
+
+  .badge-bronze {
+    @apply bg-orange-400 text-orange-900;
+  }
+}
+
+/* Utility Animations */
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  .animate-slide-down {
+    animation: slideDown 0.3s ease-out;
+  }
+
+  .animate-pop {
+    animation: pop 0.3s ease-out;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.9);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 rounded-full;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-secondary rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-secondary-dark;
+}
+
+/* Selection Color */
+::selection {
+  @apply bg-secondary text-white;
+}
+
+/* Focus Outline */
+*:focus-visible {
+  @apply outline-none ring-4 ring-secondary ring-opacity-50;
+}

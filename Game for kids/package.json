@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "start:backend": "cd \"Game for kids\" && cd backend && npm run dev",
+    "start:frontend": "cd \"Game for kids\" && cd frontend && npm run dev",
+    "build:backend": "cd \"Game for kids\" && cd backend && npm run build",
+    "build:frontend": "cd \"Game for kids\" && cd frontend && npm run build"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.27",
+    "postcss": "^8.5.8",
+    "tailwindcss": "^3.4.1"
+  }
+}
